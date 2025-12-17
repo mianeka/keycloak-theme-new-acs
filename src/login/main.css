@@ -80,3 +80,30 @@
   color: #344355;
   margin-bottom: 1.5rem;
 }
+
+body.kcBodyClass {
+    background: url("./assets/ATEQ_withoutfooter.jpg") no-repeat;
+    background-size: cover;
+ 
+}
+
+h1#kc-page-title {
+  margin-top: 10px;
+  margin-bottom: 0;
+
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #d6002a; /* rouge ATEQ */
+}
+
+/* Sous-titre sous le H1 */
+h1#kc-page-title::after {
+  content: "Welcome Back";
+  display: block;
+
+  margin-top: 6px;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #344355; /* gris/noir */
+}
