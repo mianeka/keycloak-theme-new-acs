@@ -1,6 +1,6 @@
 {
-  "name": "keycloakify-starter-angular-vite",
-  "version": "3.1.0",
+  "name": "ateq-keycloak-theme",
+  "version": "2.1.2",
   "type": "module",
   "description": "Angular + Vite Starter for Keycloakify 11",
   "repository": {
