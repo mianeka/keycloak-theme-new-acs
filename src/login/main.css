@@ -1,0 +1,82 @@
+.kcButtonClass {
+    position: relative;
+    width: 100%;
+    padding: 14px 26px;
+
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    color: #ffffff;
+
+    background: linear-gradient(
+        135deg,
+        #344355 0%,
+        #415a77 50%,
+        #2b3746 100%
+    );
+    background-size: 200% 200%;
+
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 24px rgba(52, 67, 85, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+
+    transition:
+        background-position 0.6s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+/* ✨ Hover */
+.kcButtonClass:hover {
+    background-position: right center;
+    transform: translateY(-2px);
+    box-shadow:
+        0 14px 32px rgba(52, 67, 85, 0.55),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* ✨ Active */
+.kcButtonClass:active {
+    transform: translateY(0);
+    box-shadow:
+        0 6px 14px rgba(52, 67, 85, 0.45),
+        inset 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+/* ✨ Focus (accessibilité clean) */
+.kcButtonClass:focus-visible {
+    outline: none;
+    box-shadow:
+        0 0 0 4px rgba(65, 90, 119, 0.45),
+        0 12px 28px rgba(52, 67, 85, 0.6);
+}
+
+/* 🚫 Disabled */
+.kcButtonClass:disabled {
+    background: linear-gradient(135deg, #9aa4af, #c1c7ce);
+    color: #5f6770;
+    cursor: not-allowed;
+    opacity: 0.7;
+    box-shadow: none;
+    transform: none;
+}
+
+/* sécurité */
+.kcButtonClass:disabled:hover,
+.kcButtonClass:disabled:active {
+    transform: none;
+    box-shadow: none;
+}
+
+.kcHeaderWrapperClass h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #344355;
+  margin-bottom: 1.5rem;
+}
