@@ -49,7 +49,7 @@
         inset 0 2px 6px rgba(0, 0, 0, 0.25);
 }
 
-/* ✨ Focus (accessibilité clean) */
+/* ✨ Focus */
 .kcButtonClass:focus-visible {
     outline: none;
     box-shadow:
@@ -67,7 +67,6 @@
     transform: none;
 }
 
-/* sécurité */
 .kcButtonClass:disabled:hover,
 .kcButtonClass:disabled:active {
     transform: none;
@@ -75,37 +74,37 @@
 }
 
 .kcHeaderWrapperClass h1 {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #344355;
-  margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #344355;
+    margin-bottom: 1.5rem;
 }
 
-body.kcBodyClass {
+/* =========================
+   BACKGROUND DESKTOP
+========================= */
+.login-pf body {
     background: url("./assets/ATEQ_withoutfooter.jpg") no-repeat;
     background-size: cover;
- 
+    height: 100%;
 }
 
 h1#kc-page-title {
-  margin-top: 10px;
-  margin-bottom: 0;
-
-  text-align: center;
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #d6002a; /* rouge ATEQ */
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #d6002a;
 }
 
-/* Sous-titre sous le H1 */
 h1#kc-page-title::after {
-  content: "Welcome Back";
-  display: block;
-
-  margin-top: 6px;
-  font-size: 1rem;
-  font-weight: 400;
-  color: #344355; /* gris/noir */
+    content: "Welcome Back";
+    display: block;
+    margin-top: 6px;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #344355;
 }
 
 .card-pf {
@@ -113,58 +112,90 @@ h1#kc-page-title::after {
     box-shadow: var(--pf-global--BoxShadow--lg);
     padding: 0 20px;
     max-width: 500px;
-    border-top: 4px solid;
-    border-color: #CE003D;
+    border-top: 4px solid #CE003D;
 }
-
-
-@media (min-width: 768px) {
-    #kc-container-wrapper {
-        position: absolute;
-        width: 100%;
-    }
-
-    .login-pf .container {
-        padding-right: 80px;
-    }
-
-    #kc-locale {
-        position: relative;
-        text-align: right;
-        z-index: 9999;
-    }
-}
-
-@media (max-width: 767px) {
-
-    .login-pf body {
-        background: white;
-    }
-
-    #kc-header {
-        padding-left: 15px;
-        padding-right: 15px;
-        float: none;
-        text-align: left;
+  /* #kc-header {
+       display: none;
     }
 
     #kc-header-wrapper {
-        font-size: 16px;
-        font-weight: bold;
-        padding: 20px 60px 0 0;
-        color: #72767b;
-        letter-spacing: 0;
+        display: none;
     }
 
     div.kc-logo-text {
-        margin: 0;
-        width: 150px;
-        height: 32px;
-        background-size: 100%;
+       display:none
+    } */
+
+/* =====================================================
+   MOBILE & TABLETTE
+===================================================== */
+@media (max-width: 1024px) {
+
+    /* CENTRAGE VERTICAL GLOBAL */
+    .login-pf-page {
+        min-height: 100svh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+
+    .login-pf .container {
+        padding-top: 0;
+        padding-bottom: 16px;
+        width: 100%;
+    }
+
+     #kc-header {
+       display: none;
+    }
+
+    #kc-header-wrapper {
+        display: none;
+    }
+
+    div.kc-logo-text {
+       display:none
+    }
+
+    .card-pf {
+        margin: 0 auto;
+        border-top: 4px solid #CE003D !important;
+    }
+}
+
+/* =========================
+   MOBILE ONLY
+========================= */
+@media (max-width: 767px) {
+
+    .login-pf body {
+        background: url("./assets/ATEQ_mobile_acs.jpg") no-repeat;
+        background-size: cover;
+        background-position: top left;
+        background-attachment: scroll;
+        height: 100%;
+    }
+
+    #kc-header {
+       display: none;
+    }
+
+    #kc-header-wrapper {
+        display: none;
+    }
+
+    div.kc-logo-text {
+       display:none
     }
 
     #kc-form {
         float: none;
+    }
+
+    /* SUPPRESSION DU CLAMP QUI CASSAIT TOUT */
+    .login-pf .container {
+        padding-top: 0;
     }
 
     #kc-info-wrapper {
@@ -172,42 +203,23 @@ h1#kc-page-title::after {
         background-color: transparent;
     }
 
-    .login-pf .container {
-        padding-top: 15px;
-        padding-bottom: 15px;
-    }
-
     #kc-locale {
         position: absolute;
-        width: 200px;
-        top: 20px;
-        right: 20px;
-        text-align: right;
-        z-index: 9999;
+        top: 16px;
+        right: 16px;
+        z-index: 10;
     }
-}
 
-@media (min-height: 646px) {
-    #kc-container-wrapper {
-        bottom: 12%;
-    }
-}
-
-@media (max-height: 645px) {
-    #kc-container-wrapper {
-        padding-top: 50px;
-        top: 20%;
-    }
-}
-/*phone*/
-@media (max-width: 767px) {
     .login-pf-page .card-pf {
-        max-width: none;
-        margin-left: 0;
-        margin-right: 0;
-        padding-top: 0;
+        max-width: 100%;
+        margin-left: 5px !important;
+        margin-right: 5px !important;
+        padding-top: 5px !important;
         border-top: 0;
-        box-shadow: 0 0;
+        box-shadow: none;
+    }
+       .card-pf {
+        border-top: 4px solid #CE003D !important;
     }
 
     .kc-social-grid {
